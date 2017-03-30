@@ -12,7 +12,7 @@ export const perflogger = store => next => action => {
       const start = present();
       const result = next( action );
       const end = present();
-      console.log( `%c Action with type "${action.type}" took ${( end-start ).toFixed( 2 )} milliseconds.`, 'background: #bada55; color: #222' );
+      console.log( `%c Action with type "${String(action.type)}" took ${( end-start ).toFixed( 2 )} milliseconds.`, 'background: #bada55; color: #222' );
       return result;
 };
 
